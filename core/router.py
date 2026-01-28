@@ -1,5 +1,6 @@
 from skills.open_app import open_application
 from skills.open_website import open_website
+from skills.close_app import close_application
 from skills.search_web import search
 from skills.system_info import get_time
 from core.response import format_response
@@ -16,6 +17,9 @@ def route_command(data):
         else:
             return open_application(entity)
 
+    if intent == "close_app":
+        return close_application(entity)
+    
     if intent == "search_web":
         return search(data["raw"])
 

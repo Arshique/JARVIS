@@ -1,6 +1,5 @@
 APP_PATHS = {
-    "chrome": r"C:\Program Files\Google\Chrome\Application\chrome.exe",
-    "counter strike" : r"C:\Program Files (x86)\Counter-Strike 1.6\cstrike.exe"
+    "chrome": r"C:\Program Files\Google\Chrome\Application\chrome.exe"
 }
 
 WEBSITES = {

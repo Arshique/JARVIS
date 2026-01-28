@@ -16,6 +16,8 @@ def detect_intent(text):
         return "study_mode"
     if "open" in text:
         return "open_app"
+    if "close" in text:
+        return "close_app"
     if "search" in text:
         return "search_web"
     if "time" in text:
@@ -24,17 +26,4 @@ def detect_intent(text):
 
 
 def detect_entity(text):
-    words = text.split()
-    if "counter strike" in text or "csgo" in words:
-        return "counter strike"
-    if "chrome" in words:
-        return "chrome"
-    if "youtube" in words:
-        return "youtube"
-    if "google" in words:
-        return "google"
-    if "gmail" in words:
-        return "gmail"
-    if "github" in words:
-        return "github"
-    return None
+    return text.replace("open","").replace("close","").strip()
