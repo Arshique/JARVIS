@@ -12,6 +12,8 @@ def understand(text):
     }
 
 def detect_intent(text):
+    if "study" in text:
+        return "study_mode"
     if "open" in text:
         return "open_app"
     if "search" in text:
@@ -19,6 +21,7 @@ def detect_intent(text):
     if "time" in text:
         return "get_time"
     return "unknown"
+
 
 def detect_entity(text):
     words = text.split()
