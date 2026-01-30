@@ -26,37 +26,8 @@ Each component has a single responsibility, making the system easy to extend and
 ---
 
 ## 📂 Project Structure
-
-# 🤖 JARVIS – Personal Desktop Assistant (v0.1)
-
-JARVIS is a Python-based personal desktop assistant designed to automate everyday desktop tasks using simple natural language commands. This version focuses on rule-based command execution and a modular system design.
-
----
-
-## 🚀 Features (v0.1)
-
-- Open and close desktop applications
-- Open websites in browser
-- Search the web using commands
-- Basic study mode automation
-- Get current system time
-- One-time automatic application scanning (Windows)
-
----
-
-## 🧠 Architecture Overview
-
-JARVIS uses a modular, rule-based architecture:
-
-User Input → Intent Detection → Entity Extraction → Command Routing → Skill Execution
-
-Each component has a single responsibility, making the system easy to extend and maintain.
-
----
-
-## 📂 Project Structure
-
-jarvis/
+```text
+jarvis/                                                                                                                                                                        
 ├── core/
 │ ├── brain.py
 │ ├── router.py
@@ -78,7 +49,7 @@ jarvis/
 │
 ├── main.py
 └── README.md
-
+```
 ---
 
 ## 🛠 Tech Stack
