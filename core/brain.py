@@ -26,4 +26,9 @@ def detect_intent(text):
 
 
 def detect_entity(text):
-    return text.replace("open","").replace("close","").strip()
+    remove_words = {"open", "close", "please", "jarvis", "hey"}
+
+    words = text.lower().split()
+    entity_words = [w for w in words if w not in remove_words]
+
+    return " ".join(entity_words)
