@@ -1,57 +1,74 @@
-# 🤖 JARVIS – Personal Desktop Assistant (v0.2)
+# 🤖 JARVIS – Personal Desktop Assistant (v0.3)
 
-JARVIS is a Python-based personal desktop assistant designed to automate everyday desktop tasks using simple natural language commands. This version focuses on rule-based command execution and a modular system design.
+JARVIS is a Python-based personal desktop assistant designed to automate everyday desktop tasks using natural language commands.  
+This version improves usability by handling imperfect user input safely and intelligently.
 
 ---
 
-## 🚀 Features (v0.2)
+## 🚀 Features
 
 - Open and close desktop applications
 - Open websites in browser
 - Search the web using commands
+- Command normalization (handles natural sentences)
+- Fuzzy command matching (handles typos)
+- Confidence-based confirmation for uncertain actions
+- Multiple exit keywords support (exit, bye, quit, etc.)
 - Basic study mode automation
 - Get current system time
 - One-time automatic application scanning (Windows)
-- Fuzzy-command matching
-- Command normalization
 
 ---
 
 ## 🧠 Architecture Overview
 
-JARVIS uses a modular, rule-based architecture:
+JARVIS follows a layered, rule-based architecture:
 
-User Input → Normalize Input → Intent Detection → Entity Extraction → Command Routing → Skill Execution
+User Input  
+→ Command Normalization  
+→ Intent Detection  
+→ Entity Extraction  
+→ Fuzzy Matching & Validation  
+→ Command Routing  
+→ Skill Execution  
 
-Each component has a single responsibility, making the system easy to extend and maintain.
+Each layer has a single responsibility, making the system modular and easy to extend.
 
 ---
 
 ## 📂 Project Structure
+
 ```text
-jarvis/                                                                                                                                                                        
+jarvis/
 ├── core/
-│ ├── brain.py
-│ ├── router.py
-│ └── response.py
+│   ├── brain.py
+│   ├── router.py
+│   ├── normalizer.py
+│   ├── session.py
+│   └── response.py
 │
 ├── skills/
-│ ├── open_app.py
-│ ├── close_app.py
-│ ├── open_website.py
-│ ├── search_web.py
-│ ├── study_mode.py
-│ └── system_info.py
+│   ├── open_app.py
+│   ├── close_app.py
+│   ├── open_website.py
+│   ├── search_web.py
+│   ├── study_mode.py
+│   └── system_info.py
+│
+├── utils/
+│   └── fuzzy_matcher.py
 │
 ├── tools/
-│ └── app_scanner.py
+│   └── app_scanner.py
 │
 ├── config/
-│ └── settings.py
+│   └── settings.py
 │
 ├── main.py
+├── LICENSE
 └── README.md
 ```
+
 ---
 
 ## 🛠 Tech Stack
@@ -60,6 +77,7 @@ jarvis/
 - subprocess
 - webbrowser
 - datetime
+- difflib
 - pylnk3
 
 ---
@@ -67,8 +85,13 @@ jarvis/
 ## ▶️ Running the Project
 
 Run the application scanner once to index installed apps:
-1. python tools/app_scanner.py
-2. python main.py
+- python tools/app_scanner.py
+
+Start JARVIS:
+- python main.py
+
+Exit JARVIS using:
+- exit / quit / bye / shutdown......
 
 ------
 
@@ -78,11 +101,11 @@ Run the application scanner once to index installed apps:
 - Application paths are generated locally
 - App index file is excluded via .gitignore
 - No user data is collected or transmitted
-- No external APIs are used in v0.2
+- No external APIs are used
 
 ---
 
-## ⚠️ Limitations (v0.2)
+## ⚠️ Limitations (v0.3)
 
 - Text-based input only
 - Rule-based intent detection
@@ -93,9 +116,8 @@ Run the application scanner once to index installed apps:
 
 ## 🛣 Roadmap
 
-- Command normalization
-- Enhanced study mode
 - Task-based shortcuts
+- Logging system
 - Voice input
 - Optional AI-based fallback
 
@@ -103,9 +125,9 @@ Run the application scanner once to index installed apps:
 
 ## 📌 Project Status
 
-Version: v0.2   
+Version: v0.3   
 Platform: Windows  
-Development Stage: Early / Experimental
+Development Stage: Active development
 
 ---
 
