@@ -1,4 +1,13 @@
 def normalize_command(text):
+    replacements = {
+        "chrom": "chrome",
+        "yt": "youtube",
+        "vs": "vs code"
+    }
+
+    for k, v in replacements.items():
+        text = text.replace(k, v)
+
     text = text.lower().strip()
 
     # words to remove (noise)

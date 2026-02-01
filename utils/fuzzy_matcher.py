@@ -1,9 +1,17 @@
-from difflib import get_close_matches
+from difflib import SequenceMatcher, get_close_matches
 
-def fuzzy_match(query, choices, cutoff=0.6):
-    """
-    Returns the closest match from choices for the given query.
-    If no good match is found, returns the original query.
-    """
-    matches = get_close_matches(query, choices, n=1, cutoff=cutoff)
-    return matches[0] if matches else query
+def similarity(a, b):
+    return SequenceMatcher(None, a, b).ratio()
+
+def fuzzy_match_with_confidence(query, choices):
+    if not query:
+        return None, 0.0
+
+    matches = get_close_matches(query, choices, n=1, cutoff=0.4)
+
+    if not matches:
+        return None, 0.0
+
+    best_match = matches[0]
+    confidence = similarity(query, best_match)
+    return best_match, confidence
