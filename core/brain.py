@@ -1,7 +1,9 @@
 from core.router import route_command
+from core.normalizer import normalize_command
 
 def process_input(text):
-    intent_data = understand(text)
+    normalized_text = normalize_command(text)
+    intent_data = understand(normalized_text)
     return route_command(intent_data)
 
 def understand(text):
