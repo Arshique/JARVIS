@@ -1,10 +1,10 @@
-# 🤖 JARVIS – Personal Desktop Assistant (v0.1)
+# 🤖 JARVIS – Personal Desktop Assistant (v0.2)
 
 JARVIS is a Python-based personal desktop assistant designed to automate everyday desktop tasks using simple natural language commands. This version focuses on rule-based command execution and a modular system design.
 
 ---
 
-## 🚀 Features (v0.1)
+## 🚀 Features (v0.2)
 
 - Open and close desktop applications
 - Open websites in browser
@@ -12,6 +12,7 @@ JARVIS is a Python-based personal desktop assistant designed to automate everyda
 - Basic study mode automation
 - Get current system time
 - One-time automatic application scanning (Windows)
+- Fuzzy-command matching
 
 ---
 
@@ -76,15 +77,14 @@ Run the application scanner once to index installed apps:
 - Application paths are generated locally
 - App index file is excluded via .gitignore
 - No user data is collected or transmitted
-- No external APIs are used in v0.1
+- No external APIs are used in v0.2
 
 ---
 
-## ⚠️ Limitations (v0.1)
+## ⚠️ Limitations (v0.2)
 
 - Text-based input only
 - Rule-based intent detection
-- No fuzzy matching
 - No voice support
 - No AI fallback
 
@@ -92,7 +92,6 @@ Run the application scanner once to index installed apps:
 
 ## 🛣 Roadmap
 
-- Fuzzy command matching
 - Command normalization
 - Enhanced study mode
 - Task-based shortcuts
@@ -103,7 +102,7 @@ Run the application scanner once to index installed apps:
 
 ## 📌 Project Status
 
-Version: v0.1  
+Version: v0.2   
 Platform: Windows  
 Development Stage: Early / Experimental
 
