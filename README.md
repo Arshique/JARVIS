@@ -13,6 +13,7 @@ JARVIS is a Python-based personal desktop assistant designed to automate everyda
 - Get current system time
 - One-time automatic application scanning (Windows)
 - Fuzzy-command matching
+- Command normalization
 
 ---
 
@@ -20,7 +21,7 @@ JARVIS is a Python-based personal desktop assistant designed to automate everyda
 
 JARVIS uses a modular, rule-based architecture:
 
-User Input → Intent Detection → Entity Extraction → Command Routing → Skill Execution
+User Input → Normalize Input → Intent Detection → Entity Extraction → Command Routing → Skill Execution
 
 Each component has a single responsibility, making the system easy to extend and maintain.
 
