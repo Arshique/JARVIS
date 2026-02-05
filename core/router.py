@@ -7,11 +7,10 @@ from core.response import format_response
 from skills.study_mode import start_study
 from config.settings import WEBSITES
 from utils.fuzzy_matcher import fuzzy_match_with_confidence
+from utils.config_loader import load_config
 import core.session as session
-import json
 
-with open("config/app_index.json") as f:
-    APP_INDEX = json.load(f)
+APP_INDEX = load_config("config/app_index.json")
 
 def route_command(data):
     global pending_confirmation

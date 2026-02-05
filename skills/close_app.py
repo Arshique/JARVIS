@@ -1,10 +1,9 @@
 import subprocess
-import json
 import os
+from utils.config_loader import load_config
 
 # load app index
-with open("config/app_index.json") as f:
-    APP_INDEX = json.load(f)
+APP_INDEX = load_config("config/app_index.json")
 
 # websites live inside chrome
 WEBSITE_ALIASES = {"youtube", "google", "gmail", "github"}
