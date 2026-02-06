@@ -1,0 +1,58 @@
+{
+  "protected_processes": [
+    "system",
+    "registry",
+
+    "smss.exe",
+    "csrss.exe",
+    "wininit.exe",
+    "services.exe",
+    "lsass.exe",
+    "winlogon.exe",
+
+    "svchost.exe",
+    "fontdrvhost.exe",
+    "dwm.exe",
+    "dashost.exe",
+    "spoolsv.exe",
+    "dllhost.exe",
+    "aggregatorhost.exe",
+    "sihost.exe",
+    "taskhostw.exe",
+    "ctfmon.exe",
+
+    "explorer.exe",
+    "startmenuexperiencehost.exe",
+    "shellexperiencehost.exe",
+    "searchapp.exe",
+    "searchindexer.exe",
+    "runtimebroker.exe",
+    "systemsettingsbroker.exe",
+    "textinputhost.exe",
+
+    "securityhealthsystray.exe",
+    "securityhealthservice.exe",
+    "mpdefendercoreservice.exe",
+    "msmpeng.exe",
+    "nissrv.exe",
+
+    "onedrive.exe",
+    "onedrive.sync.service.exe",
+
+    "wmiprvse.exe",
+    "conhost.exe",
+
+    "code.exe",
+    "cmd.exe",
+    "powershell.exe",
+    "bash.exe",
+    "python.exe",
+
+    "mysqld.exe",
+    "startmenuexperiencehost.exe",
+    "startmenuexperiencehost.e",
+    "audiodg.exe",
+
+    "jarvis.exe"
+  ]
+}

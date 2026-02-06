@@ -64,4 +64,12 @@ def route_command(data):
     if intent == "study_mode":
         return start_study()
 
+    if intent == "task_shortcut":
+        # Placeholder for future task shortcut handling
+        return
+
+
+    if intent == "close_all_app":
+        from skills.Close_all_app import close_all_app
+        return close_all_app()
     return "Command not supported yet."

@@ -6,7 +6,7 @@ from utils.config_loader import load_config
 APP_INDEX = load_config("config/app_index.json")
 
 # websites live inside chrome
-WEBSITE_ALIASES = {"youtube", "google", "gmail", "github"}
+WEBSITE_ALIASES = {"youtube", "google", "gmail", "github","chatgpt"}
 
 def close_application(app):
     # if user says "close youtube", close chrome

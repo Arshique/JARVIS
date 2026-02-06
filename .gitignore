@@ -245,6 +245,8 @@ Thumbs.db
 
 # Auto-generated app index (machine-specific)
 config/app_index.json
+config/settings.py
+
 
 # Environment variables / secrets
 .env

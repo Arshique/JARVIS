@@ -45,6 +45,11 @@ def detect_intent(text):
         return "search_web"
     if "time" in words:
         return "get_time"
+    if "start" in words:
+        return "task_shortcut"
+
+    if "closeall" in words:
+        return "close_all_app"
 
     return "unknown"
 
