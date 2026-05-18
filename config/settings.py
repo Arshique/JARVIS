@@ -6,5 +6,6 @@ WEBSITES = {
     "youtube": r"https://www.youtube.com",
     "google": r"https://www.google.com",
     "gmail": r"https://mail.google.com",
-    "github": r"https://github.com/Arshique"
+    "github": r"https://github.com/Arshique",
+    "chatgpt": r"https://chatgpt.com"
 }
