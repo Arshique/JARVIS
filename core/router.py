@@ -26,6 +26,12 @@ def route_command(data):
 def handle_open_app(data):
     entity = data["entity"]
 
+    if data.get("confirmed"):
+        if entity in WEBSITES:
+            return open_website(entity)
+        
+        return open_application(entity)
+
     targets = list(APP_INDEX.keys()) + list(WEBSITES.keys())
     match, confidence = fuzzy_match_with_confidence(entity, targets)
 
@@ -48,6 +54,9 @@ def handle_close_app(data):
 
     entity = data["entity"]
 
+    if data.get("confirmed"):
+        return close_application(entity)
+
     match, confidence = fuzzy_match_with_confidence(entity, list(APP_INDEX.keys()))
     if confidence < 0.75:
         session.pending_confirmation = {
@@ -64,17 +73,20 @@ def handle_close_app(data):
 def handle_search_web(data):
     return search(data["raw"])
 
-def handle_get_time():
+def handle_get_time(data):
     return get_time()
 
-def handle_study_mode():
+
+def handle_study_mode(data):
     return start_study()
 
-def handle_task_shortcut():
-    # Placeholder for future task shortcut handling
-    return
 
-def handle_close_all_app():
+def handle_task_shortcut(data):
+    # Placeholder for future task shortcut handling
+    return "Task shortcuts are not implemented yet."
+
+
+def handle_close_all_app(data):
     from skills.remove_distraction import close_all_app
     return close_all_app()
     
@@ -88,58 +100,3 @@ INTENT_HANDLERS = {
     "task_shortcut": handle_task_shortcut,
     "close_all_app": handle_close_all_app,
 }
-    # if intent == "open_app":
-    #     targets = list(APP_INDEX.keys()) + list(WEBSITES.keys())
-    #     match, confidence = fuzzy_match_with_confidence(entity, targets)
-
-    #     # No match at all
-    #     if not match:
-    #         return "Application or website not found."
-
-    #     # Low confidence → ask confirmation
-    #     if confidence < 0.75:
-    #         session.pending_confirmation = {
-    #             "intent": "open_app",
-    #             "entity": match
-    #         }
-    #         return f"Did you mean '{match}'? (yes/no)"
-
-    #     # High confidence → execute
-    #     if match in WEBSITES:
-    #         return open_website(match)
-
-    #     return open_application(match)
-
-    # if intent == "close_app":
-    #     match, confidence = fuzzy_match_with_confidence(entity, list(APP_INDEX.keys()))
-
-    #     if confidence < 0.75:
-    #         session.pending_confirmation = {
-    #             "intent": "close_app",
-    #             "entity": match
-    #         }
-    #         return f"Did you mean '{match}'? (yes/no)"
-
-    #     if match:
-    #         return close_application(match)
-
-    #     return "Application not found."
-
-    # if intent == "search_web":
-    #     return search(data["raw"])
-
-    # if intent == "get_time":
-    #     return get_time()
-
-    # if intent == "study_mode":
-    #     return start_study()
-
-    # if intent == "task_shortcut":
-    #     # Placeholder for future task shortcut handling
-    #     return
-
-
-    # if intent == "close_all_app":
-    #     from skills.remove_distraction import close_all_app
-    #     return close_all_app()
-    # return "Command not supported yet."

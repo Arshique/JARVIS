@@ -11,7 +11,10 @@ def process_input(text):
         if text in {"yes", "y"}:
             data = session.pending_confirmation
             session.pending_confirmation = None
-            return route_command(data)
+            return route_command({
+                **data,
+                "confirmed": True
+            })
 
         if text in {"no", "n"}:
             session.pending_confirmation = None
